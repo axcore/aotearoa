@@ -81,7 +81,7 @@ local n_east_o_hum = 50
 -- west_coast_north_ocean.
 local wc_nth_o_heat = 50
 local wc_nth_o_hum = 85
--- east_coast_north ocean.
+-- east_coast_north_ocean.
 local ec_nth_o_heat = 50
 local ec_nth_o_hum = 0
 -- north_cook_straight
@@ -429,9 +429,11 @@ minetest.register_biome({
 })
 
 
---east_coast_north ocean
+--east_coast_north_ocean
 minetest.register_biome({
-	name = "east_coast_north ocean",
+    -- @@@ Josselin2
+--	name = "east_coast_north ocean",
+	name = "east_coast_north_ocean",
 	--node_dust = "",
 	node_top = "aotearoa:mud_sinking",
 	depth_top = 1,
@@ -1553,7 +1555,9 @@ minetest.register_biome({
 	--node_dust = "",
 	node_top = "aotearoa:restiad_peat",
 	depth_top = 1,
-	node_filler = "aotearoa:_peat",
+    -- @@@ Josselin2
+--	node_filler = "aotearoa:_peat",
+	node_filler = "aotearoa:peat",
 	depth_filler = 6,
 	node_stone = "aotearoa:greywacke",
 	--node_water_top = "",

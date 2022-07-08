@@ -8,6 +8,11 @@ As of 20 June 2022, the original version of this mod produces a number of annoyi
 
 All changes are preceded by '@@@ Josselin2':
 
+*blocks.lua*
+
+Removed duplicate .tiles filed in aotearoa:gumland_soil
+The cooking recipe for aotearoa:coquina_limestone uses default:coral, which does not exist. Replaced it with default:coral_orange
+
 *depends.txt*
 
 Incorporated into *mod.conf*, then deleted
@@ -29,12 +34,28 @@ Some items have been given 'use_texture_alpha = "clip"'
 *mapgen.lua*
 
 Fixed typos in variable names used in the Southern Estuary biome
+Fixed typo in "east_coast_north ocean" biome (should be east_coast_north_ocean"). Did not update the "Aotearoa (New Zealand) v0.2_dev.mt" or "Biome_Guide.txt" files
+Did NOT fix the spelling of "north_cook_straight" and "south_cook_straight" biomes for backwards compatibility (should be "strait")
+In the peat bog biome, fixed invalid "aotearoa:_peat"
+
+*node_defa.lua*
+
+minetest.register_node() is called twice for the same plants. Fixed
+
+*ores.lua*
+
+Replaced "basalt" with "aotearoa:basalt" in a couple of places
 
 *README.md*
 
 Made the screenshot explicitly visible in this document.
 
 The rest of this file comprises the original README text.
+
+*trees.lua*
+
+minetest.place_schematic() calls were all broken; replaced the broken argument with "random"
+Schematic offsets for mangrove trees should be {7, 1, 7} not {2, 1, 2}; fixed
 
 # Instructions:
 Designed for use with mg_valleys.

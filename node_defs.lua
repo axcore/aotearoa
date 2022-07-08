@@ -460,31 +460,32 @@ for i in ipairs(aotearoa.plantlist) do
 		g = {snappy = 3, attached_node = 1, flammable = 1, flora = 1}
 	end
 
-
-	minetest.register_node("aotearoa:"..plantname, {
-		description = plantdesc ..sci_name,
-		drawtype = draw or "plantlike",
-		waving = 1,
-		visual_scale = vscale,
-		tiles = {"aotearoa_"..plantname..".png"},
-		inventory_image = "aotearoa_"..plantname..".png",
-		wield_image = "aotearoa_"..plantname..".png",
-		paramtype = "light",
-		sunlight_propagates = true,
-		walkable = false,
-		buildable_to = true,
-		groups = g,
-		sounds = default.node_sound_leaves_defaults(),
-		selection_box = {
-			type = "fixed",
-			fixed = selbox,
-		},
-        -- @@@ Josselin2
-        use_texture_alpha = "clip",        
-	})
-
+    -- @@@ Josselin2 - insert extra "if" to prevent minetest.register_node() being called twice for
+    -- @@@      the same item
+	if draw ~= "nodebox" then
+        minetest.register_node("aotearoa:"..plantname, {
+            description = plantdesc ..sci_name,
+            drawtype = draw or "plantlike",
+            waving = 1,
+            visual_scale = vscale,
+            tiles = {"aotearoa_"..plantname..".png"},
+            inventory_image = "aotearoa_"..plantname..".png",
+            wield_image = "aotearoa_"..plantname..".png",
+            paramtype = "light",
+            sunlight_propagates = true,
+            walkable = false,
+            buildable_to = true,
+            groups = g,
+            sounds = default.node_sound_leaves_defaults(),
+            selection_box = {
+                type = "fixed",
+                fixed = selbox,
+            },
+            -- @@@ Josselin2
+            use_texture_alpha = "clip",        
+        })
 	--singlenode bushes etc
-	if draw == "nodebox" then
+	elseif draw == "nodebox" then
 		minetest.register_node("aotearoa:"..plantname, {
 			description = plantdesc,
 			drawtype = "nodebox",

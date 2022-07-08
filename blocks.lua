@@ -67,7 +67,8 @@ minetest.register_node("aotearoa:gumland_hardpan", {
 
 minetest.register_node("aotearoa:gumland_soil", {
 	description = "Gumland Soil",
-	tiles = {"aotearoa_gumland_soil.png"},
+    -- @@@ Josselin2
+--	tiles = {"aotearoa_gumland_soil.png"},
 	tiles = {
 		"aotearoa_gumland_soil.png",
 		"aotearoa_gumland_hardpan.png",
@@ -425,7 +426,9 @@ aotearoa.stonelist = {
 	{"conglomerate", "Conglomerate", 3, 2, "sediment", "default:gravel",},
 	{"schist", "Schist", 2, 2, "cooked", "", {"aotearoa:greywacke", "aotearoa:andesite", "aotearoa:scoria", "aotearoa:basalt"}},
 	{"coquina_limestone", "Coquina Limestone", 3, 2, "sediment", "aotearoa:seashells",},
-	{"limestone", "Limestone", 2, 2, "cooked", "", {"aotearoa:coquina_limestone","default:coral"}},
+    -- @@@ Josselin2
+--	{"limestone", "Limestone", 2, 2, "cooked", "", {"aotearoa:coquina_limestone","default:coral"}},
+	{"limestone", "Limestone", 2, 2, "cooked", "", {"aotearoa:coquina_limestone","default:coral_orange"}},
 	{"concrete","Concrete",3,2,},
 	{"andesite", "Andesite", 3, 2,},
 	{"granite", "Granite", 1, 1,},

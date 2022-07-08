@@ -472,7 +472,9 @@ minetest.register_ore({
 	wherein         = {
 		"aotearoa:pale_sandstone",
 		"aotearoa:grey_sandstone",
-		"basalt",
+        -- @@@ Josselin2
+--		"basalt",
+		"aotearoa:basalt",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 2,
@@ -499,7 +501,9 @@ minetest.register_ore({
 		"aotearoa:claystone",
 		"aotearoa:pale_sandstone",
 		"aotearoa:grey_sandstone",
-		"basalt",
+        -- @@@ Josselin2
+--		"basalt",
+		"aotearoa:basalt",
 	 },
 	clust_scarcity = 9 * 9 * 9,
 	clust_num_ores = 5,
