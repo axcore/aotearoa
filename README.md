@@ -4,13 +4,14 @@ Original mod created by Dokimi, updated for Minetest v5.5.1 by Josselin2.
 
 ![Screenshot](screenshot.png)
 
-As of 20 June 2022, the original version of this mod produces a number of annoying errors/warnings on Minetest v5.5.1. I have updated the code to fix them.
+As of 10 July 2022, the original version of this mod produces a number of annoying errors/warnings on Minetest v5.5.1. I have updated the code to fix them.
 
 All changes are preceded by '@@@ Josselin2':
 
 *blocks.lua*
 
 Removed duplicate .tiles filed in aotearoa:gumland_soil
+
 The cooking recipe for aotearoa:coquina_limestone uses default:coral, which does not exist. Replaced it with default:coral_orange
 
 *depends.txt*
@@ -34,8 +35,11 @@ Some items have been given 'use_texture_alpha = "clip"'
 *mapgen.lua*
 
 Fixed typos in variable names used in the Southern Estuary biome
-Fixed typo in "east_coast_north ocean" biome (should be east_coast_north_ocean"). Did not update the "Aotearoa (New Zealand) v0.2_dev.mt" or "Biome_Guide.txt" files
+
+Fixed typo in "east_coast_north ocean" biome (should be east_coast_north_ocean"). Did NOT update the "Aotearoa (New Zealand) v0.2_dev.mt" or "Biome_Guide.txt" files
+
 Did NOT fix the spelling of "north_cook_straight" and "south_cook_straight" biomes for backwards compatibility (should be "strait")
+
 In the peat bog biome, fixed invalid "aotearoa:_peat"
 
 *node_defa.lua*
