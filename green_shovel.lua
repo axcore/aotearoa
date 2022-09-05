@@ -25,6 +25,8 @@
 
   local old_handle_node_drops = minetest.handle_node_drops
 
+-- @@@ Josselin2
+--[[
   function minetest.handle_node_drops(pos, drops, digger)
 
 		if digger:get_wielded_item():get_name() ~= "aotearoa:shovel_green" then
@@ -38,6 +40,27 @@
 		return old_handle_node_drops(pos, drops, digger)
 
 		end
+
+	return old_handle_node_drops(pos, {ItemStack(nn)}, digger)
+  end
+]]--
+  function minetest.handle_node_drops(pos, drops, digger)
+
+        if digger ~= nil then
+        
+            if digger:get_wielded_item():get_name() ~= "aotearoa:shovel_green" then
+            return old_handle_node_drops(pos, drops, digger)
+
+            end
+
+            local nn = minetest.get_node(pos).name
+
+            if minetest.get_item_group(nn, "crumbly") == 0 then
+            return old_handle_node_drops(pos, drops, digger)
+
+            end
+
+        end
 
 	return old_handle_node_drops(pos, {ItemStack(nn)}, digger)
   end

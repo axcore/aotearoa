@@ -26,6 +26,10 @@ Incorporated into *mod.conf*, then deleted
 
 The ponga fence has been given 'use_texture_alpha = "clip"'
 
+*green_shovel.lua*
+
+Fixed Minetest crash when falling nodes like sand and gravel fall on a decoration
+
 *node_defs.lua*
 
 Fixed invalid values for the inventory image in various generic sapling functions
