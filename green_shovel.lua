@@ -25,7 +25,7 @@
 
   local old_handle_node_drops = minetest.handle_node_drops
 
--- @@@ Josselin2
+-- @@@ Josselin2, using fix stolen from https://gitlab.com/tunnelers-abyss/aotearoa/
 --[[
   function minetest.handle_node_drops(pos, drops, digger)
 
@@ -46,24 +46,21 @@
 ]]--
   function minetest.handle_node_drops(pos, drops, digger)
 
-        if digger ~= nil then
-        
-            if digger:get_wielded_item():get_name() ~= "aotearoa:shovel_green" then
-            return old_handle_node_drops(pos, drops, digger)
+		if not digger or digger:get_wielded_item():get_name() ~= "aotearoa:shovel_green" then
+		return old_handle_node_drops(pos, drops, digger)
 
-            end
+		end
 
-            local nn = minetest.get_node(pos).name
+		local nn = minetest.get_node(pos).name
 
-            if minetest.get_item_group(nn, "crumbly") == 0 then
-            return old_handle_node_drops(pos, drops, digger)
+		if minetest.get_item_group(nn, "crumbly") == 0 then
+		return old_handle_node_drops(pos, drops, digger)
 
-            end
-
-        end
+		end
 
 	return old_handle_node_drops(pos, {ItemStack(nn)}, digger)
   end
+
 
 
   minetest.register_tool("aotearoa:shovel_green", {
